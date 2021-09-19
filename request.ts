@@ -18,6 +18,8 @@ export const createRequest =
     const json = await res.json()
 
     if (res.status.toString().startsWith('4')) {
+      console.log(json)
+
       throw new Error(`${options.method || 'GET'} request to ${url} failed, error: ${json?.error}`)
     }
 
