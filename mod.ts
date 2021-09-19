@@ -173,9 +173,44 @@ export class PublicClient extends Client {
       url: `/public/miners/deals/${miner}`
     })
   }
+  async getMinerStats(miner: string): Promise<{
+    miner: string
+    name: string
+    version: string
+    usedByEstuary: true
+    dealCount: number
+    errorCount: number
+    suspended: boolean
+    suspendedReason: string
+    chainInfo: {
+      peerId: string
+      addresses: string[]
+      owner: string
+      worker: string
+    }
+  }> {
+    return await this.request({
+      url: `/public/miners/stats/${miner}`
+    })
+  }
+  async getAllMiners(): Promise<
+    Record<
+      string,
+      {
+        addr: string
+        name: string
+        suspended: boolean
+        version: string
+      }
+    >
+  > {
+    return await this.request({
+      url: `/public/miners`
+    })
+  }
 }
 
-export class Estuary extends Client {
+export class EstuaryClient extends Client {
   pins: PinningClient
   content: ContentClient
   public: PublicClient
@@ -186,7 +221,3 @@ export class Estuary extends Client {
     this.public = new PublicClient(this.apiKey)
   }
 }
-
-const client = new Estuary('EST21a4fb54-7a20-4760-8e4e-8761bd427cf5ARY')
-
-client.public.queryMiner('f0135078').then((x) => console.log(JSON.stringify(x, null, 2)))
