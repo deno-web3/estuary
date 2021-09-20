@@ -1,0 +1,17 @@
+{
+  "$schema": "https://x.nest.land/eggs@0.3.8/src/schema.json",
+  "name": "estuary",
+  "entry": "./mod.ts",
+  "description": "🌊 Unofficial Deno API client for Estuary, a custom IPFS / Filecoin node",
+  "homepage": "https://github.com/deno-libs/estuary",
+  "version": "0.0.0",
+  "releaseType": null,
+  "unstable": false,
+  "unlisted": false,
+  "files": ["README.md", "mod.ts", "LICENSE"],
+  "ignore": [],
+  "checkFormat": false,
+  "checkTests": true,
+  "checkInstallation": true,
+  "check": true
+}
