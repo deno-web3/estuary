@@ -25,6 +25,6 @@ console.log(await client.public.getAllMiners())
 [cov]: https://coveralls.io/github/deno-web3/estuary
 [github-actions]: https://github.com/deno-web3/estuary/actions
 [cov-badge]: https://img.shields.io/coveralls/github/deno-web3/estuary?style=flat-square&color=black&
-[nest-badge]: https://img.shields.io/badge/publushed%20on-nest.land-black?style=flat-square
+[nest-badge]: https://img.shields.io/badge/published%20on-nest.land-black?style=flat-square
 [code-quality-img]: https://img.shields.io/codefactor/grade/github/deno-web3/estuary?style=flat-square&color=black&
 [code-quality]: https://www.codefactor.io/repository/github/deno-web3/estuary
