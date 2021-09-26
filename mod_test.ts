@@ -22,14 +22,21 @@ describe('public endpoints', () => {
     expect(typeof deal.dealsFailed).toBe('number')
   })
   it('getAllMiners()', async () => {
-    const req = await client.public.getAllMiners()
+    const { '0': miner } = await client.public.getAllMiners()
 
-    expect(req['0']).toEqual({
-      addr: 'f015927',
-      name: '',
-      suspended: false,
-      version: 'lotus-1.11.2-rc1+mainnet+git.80624845c'
-    })
+    expect(typeof miner.addr).toBe('string')
+    expect(typeof miner.name).toBe('string')
+    expect(typeof miner.suspended).toBe('boolean')
+    expect(miner.version).toMatch(/lotus/)
+  })
+  it('queryMiner(minerId)', async () => {
+    const miner = await client.public.queryMiner('f015927')
+
+    expect(typeof miner.miner).toBe('string')
+    expect(typeof miner.price).toBe('string')
+    expect(typeof miner.verifiedPrice).toBe('string')
+    expect(typeof miner.maxPieceSize).toBe('number')
+    expect(typeof miner.minPieceSize).toBe('number')
   })
 })
 
