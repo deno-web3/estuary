@@ -15,19 +15,38 @@ export class PinningClient extends Client {
   constructor(apiKey: string) {
     super(apiKey)
   }
+  /**
+   * Get a list of all pinned objects.
+   * @see https://docs.estuary.tech/pinning-list
+   * @returns pin list
+   */
   async listPins(): Promise<PinList> {
     return await this.request({ url: '/pinning/pins' })
   }
+  /**
+   * Add a new pin object for the current access token.
+   * @param options
+   * @returns pin
+   */
   async addPin({ name, cid }: { name: string; cid: string }): Promise<Pin> {
     return await this.request({
       url: '/pinning/pins',
       options: { body: JSON.stringify({ name, cid }), method: 'POST' }
     })
   }
+  /**
+   * Get a pinned object.
+   * @param id pin ID
+   * @returns pin
+   */
   async pinById(id: number | string): Promise<Pin> {
     return await this.request({ url: `/pinning/pins/${id}` })
   }
-  async removePin(id: number | string) {
+  /**
+   * Remove a pinned object
+   * @param id pin ID
+   */
+  async removePin(id: number | string): Promise<void> {
     return await this.request({ url: `/pinning/pins/${id}`, options: { method: 'DELETE' } })
   }
 }
