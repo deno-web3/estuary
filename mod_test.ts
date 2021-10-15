@@ -1,4 +1,4 @@
-import { describe, expect, it, run } from 'https://deno.land/x/tincan@0.2.2/mod.ts'
+import { describe, expect, it, run } from 'https://deno.land/x/tincan@1.0.0/mod.ts'
 import { EstuaryClient } from './mod.ts'
 
 const client = new EstuaryClient('')
