@@ -21,7 +21,7 @@ console.log(await client.public.getAllMiners())
 
 [docs-badge]: https://img.shields.io/github/v/release/deno-web3/estuary?label=Docs&logo=deno&style=flat-square&color=black
 [docs]: https://doc.deno.land/https/deno.land/x/estuary/mod.ts
-[gh-actions-img]: https://img.shields.io/github/workflow/status/deno-web3/estuary/CI?style=flat-square&logo=github&label=&color=black
+[gh-actions-img]: https://img.shields.io/github/actions/workflow/status/deno-web3/estuary/main.yml?branch=master&style=flat-square&logo=github&label=&color=black
 [cov]: https://coveralls.io/github/deno-web3/estuary
 [github-actions]: https://github.com/deno-web3/estuary/actions
 [cov-badge]: https://img.shields.io/coveralls/github/deno-web3/estuary?style=flat-square&color=black&
